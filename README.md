@@ -21,8 +21,8 @@ Injection can be done by injecting it with your favorite shared library injector
 
 ### Credit
 
-ViKiNG (Making Barbossa)
-Akalisch (NetVarManager/PatternScanner)
-Pwned (Menu & Sorting Everything)
-Rocco (DLights)
-Bypass (Spec List)
+* ViKiNG (Making Barbossa)
+* Akalisch (NetVarManager/PatternScanner)
+* Pwned (Menu & Sorting Everything)
+* Rocco (DLights)
+* Bypass (Spec List)
