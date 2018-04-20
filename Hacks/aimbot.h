@@ -4,11 +4,10 @@
 //
 #pragma once
 
-#include "main.h"
+#include "../main.h"
 
 void DoAim(CUserCmd* pCmd, C_BaseEntity* local, C_BaseCombatWeapon* weapon, bool& bSendPacket);
 
-namespace Aimbot
-{
+namespace Aimbot {
     extern C_BaseEntity* curTarget;
 }

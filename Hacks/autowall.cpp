@@ -1,7 +1,7 @@
 // Pasted from aimtux
 
-#include "../Hacks/autowall.h"
-#include "../Hacks/aimbot.h"
+#include "autowall.h"
+#include "aimbot.h"
 
 // Thanks @pwned for fix
 

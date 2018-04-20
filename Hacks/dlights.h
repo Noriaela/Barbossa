@@ -1,3 +1,3 @@
-#include "main.h"
+#include "../main.h"
 
 auto DLights() -> void;

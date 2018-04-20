@@ -29,7 +29,7 @@ void rCrosshair(C_BaseEntity* local)
     
     draw->drawCrosshair(X, Y, Color::White());
 }
-
+/*
 void DrawScope(C_BaseEntity* local)
 {
     if(!vars.misc.noscope || !local || (local && !local->IsScoped()))
@@ -49,3 +49,4 @@ void DrawScope(C_BaseEntity* local)
     draw->drawline(w / 2, 0, w / 2, h, vars.colors.scope);
     draw->drawline(0, h / 2, w, h / 2, vars.colors.scope);
 }
+*/

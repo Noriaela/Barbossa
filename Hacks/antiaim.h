@@ -4,19 +4,17 @@
 //
 #pragma once
 
-#include "main.h"
+#include "../main.h"
 
 extern Vector atTargets;
 
-enum VIEW_ANTIAIM_PITCH
-{
+enum VIEW_ANTIAIM_PITCH {
     Emotion     = 1,
     Up          = 2,
     Custom      = 3,
 };
 
-enum VIEW_ANTIAIM_YAW
-{
+enum VIEW_ANTIAIM_YAW {
     Backwards       = 1,
     Jitter          = 2,
     FakeTroll       = 3,
@@ -35,8 +33,7 @@ enum VIEW_ANTIAIM_YAW
     CustomAA        = 16,
 };
 
-enum VIEW_ANTIIAIM_FYAW
-{
+enum VIEW_ANTIIAIM_FYAW {
     FakeAngel       = 1,
     FakeSpin        = 2,
     FakeLBYHook     = 3,

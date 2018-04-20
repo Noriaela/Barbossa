@@ -1,4 +1,4 @@
-#include "main.h"
+#include "../main.h"
 // Plan on making resolver better :)
 
 RecvVarProxyFn OldProxy_X, OldProxy_Y, OldProxy_Z, OldProxy_Velocity, VeloProx1, VeloProx2, VeloProx3;

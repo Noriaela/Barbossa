@@ -1,4 +1,4 @@
-#include "main.h"
+#include "../main.h"
 
 #include "../Drawings/menu.h"
 
@@ -46,7 +46,7 @@ void hkPaintTraverse(void* thisptr, VPANEL panel, bool forceRepaint, bool allowF
             vars.colors.hands       = Color::Black();
             vars.colors.weapon      = Color::White();
             
-            vars.colors.scope       = Color::Red();
+            //vars.colors.scope       = Color::Red();
             vars.colors.world       = Color::Red();
             vars.colors.sky         = Color::Red();
         }
@@ -66,7 +66,7 @@ void hkPaintTraverse(void* thisptr, VPANEL panel, bool forceRepaint, bool allowF
             
             DrawPlayerESP();    // Player esp
                         
-            DrawScope(local);   // Draws the crosshar for noscope
+            //DrawScope(local);   // Draws the crosshar for noscope
             
             rCrosshair(local);  // Draws recoil crosshair
             

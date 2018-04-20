@@ -1,4 +1,4 @@
-#include "main.h"
+#include "../main.h"
 
 #include "../Hacks/aimbot.h"
 #include "../Hacks/antiaim.h"

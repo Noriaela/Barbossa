@@ -31,7 +31,7 @@
 
 using namespace std;
 
-#include "offsets.h"    // OFFSET 
+#include "SDK/offsets.h"    // OFFSET 
 
 #include "SDK/CEffects.h" 
 #include "SDK/Vector.h"
@@ -61,18 +61,18 @@ using namespace std;
 #include "SDK/CInput.h"
 #include "SDK/VMT.h"
 
-#include "netvarmanager.h"
-#include "bvars.h"
-#include "interfaces.h"
-#include "drawings.h"
+#include "Utils/netvarmanager.h"
+#include "Variables/bvars.h"
+#include "Interfaces/interfaces.h"
+#include "Drawings/drawings.h"
 
 /* Utilities */
-#include "utils.h"
-#include "patternscan.h"
+#include "Utils/utils.h"
+#include "Utils/patternscan.h"
 
 /* Hacks */
-#include "hacks.h"
-#include "hooks.h"
+#include "Hacks/hacks.h"
+#include "Interfaces/hooks.h"
 
 
 #endif /* main_hpp */
