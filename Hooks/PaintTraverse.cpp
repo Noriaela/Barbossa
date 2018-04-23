@@ -66,7 +66,7 @@ void hkPaintTraverse(void* thisptr, VPANEL panel, bool forceRepaint, bool allowF
             
             DrawPlayerESP();    // Player esp
                         
-            //DrawScope(local);   // Draws the crosshar for noscope
+            DrawScope(local);   // Draws the crosshar for noscope
             
             rCrosshair(local);  // Draws recoil crosshair
             
