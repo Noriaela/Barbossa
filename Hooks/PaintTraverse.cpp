@@ -3,14 +3,10 @@
 #include "../Drawings/menu.h"
 
 #include "../Hacks/crosshair.h"
-#include "../Hacks/dlights.h"
 #include "../Hacks/esp.h"
 #include "../Hacks/spectators.h"
 
-void hkPaintTraverse(void* thisptr, VPANEL panel, bool forceRepaint, bool allowForce)
-{
-    if (vars.misc.noscope && !strcmp("HudZoom", pPanel->GetName(panel)))
-        return;
+void hkPaintTraverse(void* thisptr, VPANEL panel, bool forceRepaint, bool allowForce){
     
     paintVMT->GetOriginalMethod<tPaintTraverse>(42)(thisptr, panel, forceRepaint, allowForce);
     
@@ -46,7 +42,6 @@ void hkPaintTraverse(void* thisptr, VPANEL panel, bool forceRepaint, bool allowF
             vars.colors.hands       = Color::Black();
             vars.colors.weapon      = Color::White();
             
-            //vars.colors.scope       = Color::Red();
             vars.colors.world       = Color::Red();
             vars.colors.sky         = Color::Red();
         }
@@ -64,14 +59,8 @@ void hkPaintTraverse(void* thisptr, VPANEL panel, bool forceRepaint, bool allowF
         
         {   // Drawing features / own scope just for readablity
             
-            DrawPlayerESP();    // Player esp
-                        
-            DrawScope(local);   // Draws the crosshar for noscope
-            
+            DrawPlayerESP();    // Player esp            
             rCrosshair(local);  // Draws recoil crosshair
-            
-            DLights();          // Renders in dlights
-            
             Spectatorlist();    // Draws speclist
             
         }

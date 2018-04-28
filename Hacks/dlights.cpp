@@ -1,4 +1,4 @@
-#include "../Hacks/dlights.h"
+#include "dlights.h"
 
 // Thanks @rocco (even though it's from aimtux lmao)
 

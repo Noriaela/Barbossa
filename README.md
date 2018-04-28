@@ -24,5 +24,4 @@ Injection can be done by injecting it with your favorite shared library injector
 * ViKiNG (Making Barbossa)
 * Akalisch (NetVarManager/PatternScanner)
 * Pwned (Menu & Sorting Everything)
-* Rocco (DLights)
 * Bypass (Spec List)

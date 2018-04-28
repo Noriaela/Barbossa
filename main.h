@@ -72,7 +72,7 @@ using namespace std;
 
 /* Hacks */
 #include "Hacks/hacks.h"
-#include "Interfaces/hooks.h"
+#include "Interfaces/Hooks.h"
 
 
 #endif /* main_hpp */

@@ -1,0 +1,3 @@
+/Users/jameshenson/Github/Barbossa/CMakeFiles/rebuild_cache.dir
+/Users/jameshenson/Github/Barbossa/CMakeFiles/edit_cache.dir
+/Users/jameshenson/Github/Barbossa/CMakeFiles/Barbossa.dir

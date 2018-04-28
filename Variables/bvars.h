@@ -71,7 +71,6 @@ public:
         bool armour     = false;        // Armour Bar
         bool skeleton   = false;        // Skeleton ESP
         bool snapline   = false;        // Snaplines obv
-        bool dlights    = false;        // Dlight
         bool rcrosshair = false;        // Recoil Crosshair (Shows but doesn't move)
         bool scrosshair = false;        // Sniper Crosshair
         bool defusing   = false;        // Defusing ESP
@@ -111,7 +110,6 @@ public:
         bool spammer        = false;    // Chat spammer
         bool noflash        = true;     // Disabled flashbangs
         int flashalpha      = 0.f;      // How "flashed" you are
-        bool noscope        = true;     // Noscope
         
         bool fakelag        = false;    // Fake lag enable (WIP)
         int fakelagfactor   = 0;        // Fake Lag (WIP)

@@ -583,9 +583,8 @@ void cMenu::renderMisc(int x, int y) {
     this->renderSlider(x + 300, y + 40, 125, "", vars.misc.fakelagfactor, 16, 0);
     this->renderCheckbox(x + 300, y + 60, "WorldPaint", &vars.misc.worldpaint);
     this->renderCheckbox(x + 300, y + 80, "Spec List", &vars.misc.showspectators);
-    this->renderCheckbox(x + 300, y + 100, "No Scope", &vars.misc.noscope);
-    this->renderCheckbox(x + 300, y + 120, "Antiscreenshot", &vars.misc.antiscreenshot);
-    this->renderCheckbox(x + 300, y + 140, "Anti untrust", &vars.misc.antiuntrust);
+    this->renderCheckbox(x + 300, y + 100, "Antiscreenshot", &vars.misc.antiscreenshot);
+    this->renderCheckbox(x + 300, y + 120, "Anti untrust", &vars.misc.antiuntrust);
 
     
     
