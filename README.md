@@ -26,3 +26,4 @@ Injection can be done by injecting it with your favorite shared library injector
 * Akalisch (NetVarManager/PatternScanner)
 * Pwned (Menu & Sorting Everything)
 * Bypass (Spec List)
+* Ziwiiz (Fake Angles)
