@@ -41,7 +41,7 @@ void DoAntiaim(CUserCmd* cmd, C_BaseEntity* local, C_BaseCombatWeapon* weapon, b
         }
         
         if(vars.misc.aaX > 0) {
-            if(vars.misc.aaX == VIEW_ANTIAIM_PITCH::Emotion){
+            if(vars.misc.aaX == VIEW_ANTIAIM_PITCH::Down){
                 cmd->viewangles.x = 89;
             } 
             if(vars.misc.aaX == VIEW_ANTIAIM_PITCH::Up) {
@@ -322,33 +322,10 @@ void DoAntiaim(CUserCmd* cmd, C_BaseEntity* local, C_BaseCombatWeapon* weapon, b
                     cmd->viewangles.y -= 90.f;
                 } else {
                     cmd->viewangles.y += 90.f;
+                        }
+                    }
                 }
-            }
-        }
-        if(vars.misc.FaaY == VIEW_ANTIIAIM_FYAW::Fakehead) {
-            float last_lby = 0.f;
-            float last_lby_time = 0.f;
-            static bool jitter_switch = false;
-            float outgoing_latency = 0.f; //inetchannel
-            float current_lby = local->GetLowerBodyYawTarget();
-            
-            if (current_lby != last_lby || fabs(local->GetVelocity().Length2D()) > 0.1f) {
-                last_lby_time = pGlobals->curtime;
-                last_lby = current_lby;
-            }
-            if (!bSendPacket) {
-                if (fabs(last_lby_time - pGlobals->curtime) > 1.1f - outgoing_latency) {
-                    cmd->viewangles.y += 90.f;
-                } else {
-                    cmd->viewangles.y += 180.f;
-                }
-            } else {
-                cmd->viewangles.y -= 90.f;
-            }
-            *bSendPacket = jitter_switch;
-            jitter_switch = !jitter_switch;
-            }
-        	} // End Of FakeAA Yaw
+            } // End Of FakeAA Yaw
     	}
 	}
 }
