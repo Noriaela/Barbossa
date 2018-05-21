@@ -95,8 +95,9 @@ void PrintInfo() {
     pCvar->ConsoleColorPrintf(Color::White(),           "Coded by : \n");
     pCvar->ConsoleColorPrintf(Color::White(),           "ViKiNG\n");
     pCvar->ConsoleColorPrintf(Color::White(),           "Improved by :\n");
-    pCvar->ConsoleColorPrintf(Color(230, 40, 240, 255), "- pwned\n"); 
+    pCvar->ConsoleColorPrintf(Color::Pink(),            "- pwned\n"); 
     pCvar->ConsoleColorPrintf(Color::Red(),             "- Warlauke\n");
-    pCvar->ConsoleColorPrintf(Color(0, 191, 255),       "- Bypass\n");
+    pCvar->ConsoleColorPrintf(Color::Blue(),            "- Bypass\n");
+    pCvar->ConsoleColorPrintf(Color::Yellow(),          "- Ziwiiz\n");
 }
 
