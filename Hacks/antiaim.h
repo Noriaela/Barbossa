@@ -1,49 +1,36 @@
-//
-//  antiaim.hpp
-//  vHook
-//
 #pragma once
-
 #include "../main.h"
-
 extern Vector atTargets;
 
 enum VIEW_ANTIAIM_PITCH {
-    Emotion     = 1,
+    Down        = 1,
     Up          = 2,
-    Custom      = 3,
 };
 
 enum VIEW_ANTIAIM_YAW {
     Backwards       = 1,
     Jitter          = 2,
-    FakeTroll       = 3,
-    FakeStatic      = 4,
-    FJitter         = 5,
-    SlowSpin        = 6,
-    FastSpin        = 7,
-    RandomBackJitter= 8,
-    BackJitter      = 9,
-    LowerYaw        = 10,
-    SidewaysLeft    = 11,
-    SidewaysRight   = 12,
-    LBYBreaker      = 13,
-    Skeet           = 14,
-    ICECREAM        = 15,
-    CustomAA        = 16,
+    FakeStatic      = 3,
+    FJitter         = 4,
+    SlowSpin        = 5,
+    FastSpin        = 6,
+    RandomBackJitter= 7,
+    BackJitter      = 8,
+    LowerYaw        = 9,
+    SidewaysLeft    = 10,
+    SidewaysRight   = 11,
+    LBYBreaker      = 12,
 };
 
 enum VIEW_ANTIIAIM_FYAW {
-    FakeAngel       = 1,
-    FakeSpin        = 2,
-    FakeLBYHook     = 3,
-    FakeTwoStep     = 4,
-    FakeLowerBody135= 5,
-    FakeInverseRotation = 6,
-    FakeJitter      = 7,
-    FakeLBY         = 8,
-    FakeSideLBY     = 9,
-    Fakehead        = 10,
+    FakeSpin        = 1,
+    FakeLBYHook     = 2,
+    FakeTwoStep     = 3,
+    FakeLowerBody135= 4,
+    FakeInverseRotation = 5,
+    FakeJitter      = 6,
+    FakeLBY         = 7,
+    FakeSideLBY     = 8,
 };
 
 void DoAntiaim(CUserCmd* cmd, C_BaseEntity* local, C_BaseCombatWeapon* weapon, bool& bPacket);
