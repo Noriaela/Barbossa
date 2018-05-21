@@ -123,6 +123,9 @@ public:
         return Color(0, 0, 0, 255);
     }
     
+    static Color Pink() {
+        return Color(230, 40, 240, 255);
+    }
     
     static Color GetFromHSB(float hue, float saturation, float brightness) {
         float h = hue == 1.0f ? 0 : hue * 6.0f;
