@@ -58,7 +58,6 @@ void showranks(CUserCmd* cmd) {
 void hacks(CUserCmd* cmd, C_BaseEntity* local, C_BaseCombatWeapon* weapon, Vector& vOldAngles, bool& sendpacket) {
     DoAutoStrafe(cmd, local);
     DoBhop(cmd, local);
-    CirlceStrafe(local, cmd, vOldAngles);
     DoAim(cmd, local, weapon, sendpacket);
     DoAntiaim(cmd, local, weapon, sendpacket);
     ContinuousPistols(cmd, weapon); // will continously fire pistol when trigger is  held

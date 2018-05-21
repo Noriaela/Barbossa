@@ -40,7 +40,6 @@ void hkPaintTraverse(void* thisptr, VPANEL panel, bool forceRepaint, bool allowF
             return;
         pwnmymenu(); {
             DrawPlayerESP();    // Player esp            
-            rCrosshair(local);  // Draws recoil crosshair
             Spectatorlist();    // Draws speclist
         }
         if(vars.menu) { // Draw menu items
