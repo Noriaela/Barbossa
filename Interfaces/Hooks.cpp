@@ -1,7 +1,6 @@
 #include "../main.h"
 
-void InitializeInterfaces()
-{
+void InitializeInterfaces() {
     pSurface        = GetInterface<ISurface>("./bin/osx64/vguimatsurface.dylib", "VGUI_Surface");
     pPanel          = GetInterface<IPanel>("./bin/osx64/vgui2.dylib", "VGUI_Panel");
     pEffects        = GetInterface<CEffects>("./bin/osx64/engine.dylib", "VEngineEffects"); 
@@ -20,15 +19,13 @@ void InitializeInterfaces()
     pPhysics        = GetInterface<IPhysicsSurfaceProps>("./bin/osx64/vphysics.dylib", "VPhysicsSurfaceProps");
 }
 
-void ProtectAddr(void* addr, int prot)
-{
+void ProtectAddr(void* addr, int prot) {
     long pagesize = sysconf(_SC_PAGESIZE);
     void* address = (void *)((long)(uintptr_t)addr & ~(pagesize - 1));
     mprotect(address, sizeof(address), prot);
 }
 
-void InitializeVMTs()
-{
+void InitializeVMTs() {
     uintptr_t findClientMode = CPatternScanner::Instance()->GetPointer("client.dylib",(unsigned char*)CLIENTMODE_SIG, CLIENTMODE_MASK, 0xF) + 0x4;
     uintptr_t findGlobalVars = CPatternScanner::Instance()->GetPointer("client.dylib", (unsigned char*)GLOBALS_SIG, GLOBALS_MASK, 0x3) + 0x4;
     uintptr_t findRankReveal = CPatternScanner::Instance()->GetPointer("client.dylib",(unsigned char*)RANKREVEAL_SIG, RANKREVEAL_MASK, 0x15) + 0x4;
@@ -54,8 +51,7 @@ void InitializeVMTs()
     predVMT         = new VMT(pPrediction);
 }
 
-void InitializeHooks()
-{
+void InitializeHooks() {
     paintVMT->HookVM((void*)hkPaintTraverse, 42);
     paintVMT->ApplyVMT();
         
@@ -74,8 +70,7 @@ void InitializeHooks()
     predVMT->ApplyVMT();
 }
 
-void Unhook()
-{
+void Unhook() {
     pEngine->ExecuteClientCmd("cl_mouseenable 1");
     paintVMT        ->ReleaseVMT();
     createmoveVMT   ->ReleaseVMT();
@@ -90,21 +85,18 @@ void Unhook()
     delete predVMT;
 }
 
-void UpdateResolver()
-{
+void UpdateResolver() {
     OldProxy_X = (RecvVarProxyFn)NetVarManager::HookProp("DT_CSPlayer", "m_angEyeAngles[0]", FixPitch);
     OldProxy_Y = (RecvVarProxyFn)NetVarManager::HookProp("DT_CSPlayer", "m_angEyeAngles[1]", FixYaw);
 }
 
-void PrintInfo()
-{
+void PrintInfo() {
     pCvar->ConsoleColorPrintf(Color::Green(),           "Barbossa version 1.3\n");
-    pCvar->ConsoleColorPrintf(Color::White(),           "Coded by : ");
-    pCvar->ConsoleColorPrintf(Color::White(),           "ViKiNG\n\n");
+    pCvar->ConsoleColorPrintf(Color::White(),           "Coded by : \n");
+    pCvar->ConsoleColorPrintf(Color::White(),           "ViKiNG\n");
     pCvar->ConsoleColorPrintf(Color::White(),           "Improved by :\n");
-    pCvar->ConsoleColorPrintf(Color(230, 40, 240, 255), "- pwned\n");
+    pCvar->ConsoleColorPrintf(Color(230, 40, 240, 255), "- pwned\n"); 
     pCvar->ConsoleColorPrintf(Color::Red(),             "- Warlauke\n");
-    pCvar->ConsoleColorPrintf(Color::Blue(),            "- rocco\n");
     pCvar->ConsoleColorPrintf(Color(0, 191, 255),       "- Bypass\n");
 }
 
