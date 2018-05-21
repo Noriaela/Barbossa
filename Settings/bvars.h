@@ -43,13 +43,10 @@ public:
         bool autocrouch = false;        // Crouch when something is in fov
         bool rcs        = false;        // Recoil control system
         int rcsf        = 0;            // Recoil control
-
     }aimbot;
     
-    class cVisuals
-    {
+    class cVisuals {
     public:
-        
         bool enabled    = false;        // Enable
         bool enemyonly  = false;        // Enemy only
         bool visonly    = false;        // Visual only
@@ -60,8 +57,6 @@ public:
         bool armour     = false;        // Armour Bar
         bool skeleton   = false;        // Skeleton ESP
         bool snapline   = false;        // Snaplines obv
-        bool rcrosshair = false;        // Recoil Crosshair (Shows but doesn't move)
-        bool scrosshair = false;        // Sniper Crosshair
         // Chams
         bool chams      = false;        // Player Chams
         bool handchams  = false;         // Handchams obv
@@ -78,7 +73,6 @@ public:
         bool novisual       = false;    // No visual recoil ofc
         bool bhop           = false;    // BunnyHop
         bool autostrafe     = false;    // Strafes for you ofc
-        bool cstrafe        = false;    // Circle strafes
         bool airstuck       = false;    // Airstuck
         bool fovt           = false;    // Fov Changer Enabled
         int fov             = 10;       // FOV changer
@@ -87,9 +81,6 @@ public:
         bool spammer        = false;    // Chat spammer
         bool noflash        = false;     // Disabled flashbangs
         int flashalpha      = 0.f;      // How "flashed" you are
-    
-        bool worldpaint     = false;    // World Paint
-        bool changesky      = false;    // Changes Sky
         bool antiscreenshot = false;    // Anti screenshot
         bool showspectators = false;    // Spectator List
         // AntiAim
@@ -97,9 +88,9 @@ public:
         bool thirdpersonmode= false;    // Thirdperson
         bool attargets      = false;    // AtTargets ofc
         bool fakeaa         = false;    // Fake anti aim
-        int aaY             = 0;        // Y AntiAim
-        int aaX             = 0;        // X AntiAim
-        int FaaY            = 0;        // Y Fake anti aim (Thnx Ziwiiz)
+        int aaX             = 0;        // Pitch AntiAim        
+        int aaY             = 0;        // Yaw AntiAim
+        int FaaY            = 0;        // Fake Yaw AntiAim
     }misc;
 
     class cColors {
