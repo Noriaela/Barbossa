@@ -62,7 +62,6 @@ public:
         bool snapline   = false;        // Snaplines obv
         bool rcrosshair = false;        // Recoil Crosshair (Shows but doesn't move)
         bool scrosshair = false;        // Sniper Crosshair
-
         // Chams
         bool chams      = false;        // Player Chams
         bool handchams  = false;         // Handchams obv
@@ -101,10 +100,6 @@ public:
         int aaY             = 0;        // Y AntiAim
         int aaX             = 0;        // X AntiAim
         int FaaY            = 0;        // Y Fake anti aim (Thnx Ziwiiz)
-        int customaa        = 0;        // Custom Pitch
-        int fakeyaw         = 180;      // Fake Y
-        int realyaw         = 20;       // Real Y
-
     }misc;
 
     class cColors {
@@ -130,7 +125,6 @@ struct Corrections {
     float x, y;
     bool whitelist;
     bool resolved;
-    bool baim;
     int dropdown_x = 0;
     int dropdown_y = 0;
 };
