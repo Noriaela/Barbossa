@@ -348,6 +348,7 @@ void DoAntiaim(CUserCmd* cmd, C_BaseEntity* local, C_BaseCombatWeapon* weapon, b
             *bSendPacket = jitter_switch;
             jitter_switch = !jitter_switch;
             }
-        } // End Of FakeAA Yaw
-    }
+        	} // End Of FakeAA Yaw
+    	}
+	}
 }
