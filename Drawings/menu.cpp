@@ -425,7 +425,7 @@ void cMenu::renderAim(int x, int y) {
     FY.push_back("FakeLBY");
     FY.push_back("FakeSideLBY");
     FY.push_back("FakeHead");
-    
+    // Right Side 
     this->renderCheckbox(x + 300, y, "AntiAim Enabled", &vars.misc.antiaim);
     this->renderCheckbox(x + 300, y + 20, "Show Real Angles", &vars.misc.thirdpersonmode);
     this->renderCheckbox(x + 300, y + 40, "Fake", &vars.misc.fakeaa); // 60
@@ -530,9 +530,7 @@ void cMenu::renderVis(int x, int y) {
     this->renderCheckbox(x, y + 140, "Heath text", &vars.visuals.healthtext);
     this->renderCheckbox(x, y + 160, "Skeleton", &vars.visuals.skeleton);
     this->renderCheckbox(x, y + 180, "Snaplines", &vars.visuals.snapline);
-    
-    // Left side
-    
+
     vector<string> Players;
     vector<string> Hands;
     vector<string> Weapons;
@@ -545,7 +543,7 @@ void cMenu::renderVis(int x, int y) {
     Weapons.push_back("Lit");
     Weapons.push_back("Texture");
     Weapons.push_back("Wireframe");
-    
+    // Right Side
     this->renderCheckbox(x + 300, y, "Player Chams", &vars.visuals.chams);
     this->renderCheckbox(x + 300, y + 20, "Hand Chams", &vars.visuals.handchams);
     this->renderCheckbox(x + 300, y + 40, "Weapon Chams", &vars.visuals.weaponchams);
@@ -571,23 +569,10 @@ void cMenu::renderMisc(int x, int y) {
     this->renderSlider(x, y + 70, 180, "FOV", vars.misc.fov, 70, 0);
     this->renderCheckbox(x, y + 90, "No recoil", &vars.misc.norecoil);
     this->renderCheckbox(x, y + 110, "No visual recoil", &vars.misc.novisual);
-    
-    vector<string> FakeLag;
-    
-    FakeLag.push_back("Normal");
-    FakeLag.push_back("Adaptive");
-    
-    //
-    this->renderCheckbox(x + 300, y, "FakeLag", &vars.misc.fakelag);
-    this->renderCombo(x + 300, y + 20, 125, 20, "Normal", FakeLag, vars.misc.fakelagtype, &vars.fakelag_opend);
-    this->renderSlider(x + 300, y + 40, 125, "", vars.misc.fakelagfactor, 16, 0);
-    this->renderCheckbox(x + 300, y + 60, "WorldPaint", &vars.misc.worldpaint);
-    this->renderCheckbox(x + 300, y + 80, "Spec List", &vars.misc.showspectators);
-    this->renderCheckbox(x + 300, y + 100, "Antiscreenshot", &vars.misc.antiscreenshot);
-    this->renderCheckbox(x + 300, y + 120, "Anti untrust", &vars.misc.antiuntrust);
-
-    
-    
+    // Right Side
+    this->renderCheckbox(x + 300, y, "Spec List", &vars.misc.showspectators);
+    this->renderCheckbox(x + 300, y + 20, "Antiscreenshot", &vars.misc.antiscreenshot);
+    this->renderCheckbox(x + 300, y + 40, "Anti untrust", &vars.misc.antiuntrust);    
 }
 
 void cMenu::renderColors(int x, int y) {
@@ -597,7 +582,6 @@ void cMenu::renderColors(int x, int y) {
     Colors.push_back("CT Colours");
     Colors.push_back("T Colours");
     Colors.push_back("Hand/Weapon Colours");
-    Colors.push_back("World Colours");
     
     this->renderCombo(x + 200, y + 22 + 14, 125, 20, "CT Colours", Colors, vars.colors.combo, &vars.colors_opend);
 
@@ -617,23 +601,17 @@ void cMenu::renderColors(int x, int y) {
     if(vars.colors.combo == 2) {
         this->drawcolorpicker(x, y + 20, "Hands", vars.colors.hands);
         this->drawcolorpicker(x + 350, y + 20, "Weapon", vars.colors.weapon);
-    }
-    if(vars.colors.combo == 3) {
-        this->drawcolorpicker(x, y + 20, "World", vars.colors.world);
-        this->drawcolorpicker(x + 350, y + 20, "Sky", vars.colors.sky);
-    }
-    
+    } 
 }
 
 // Menu tabs
-enum mTab
-{
-    Main    = 0,
-    AimTab  = 1,
+enum mTab {
+    Main        = 0,
+    AimTab      = 1,
     PlayerTab   = 2,
-    VisTab  = 3,
-    MiscTab = 4,
-    ColorsTab = 5
+    VisTab      = 3,
+    MiscTab     = 4,
+    ColorsTab   = 5,
 };
 
 static int curTab = mTab::AimTab;

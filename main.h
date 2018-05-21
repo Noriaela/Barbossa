@@ -62,7 +62,7 @@ using namespace std;
 #include "SDK/VMT.h"
 
 #include "Utils/netvarmanager.h"
-#include "Variables/bvars.h"
+#include "Settings/bvars.h"
 #include "Interfaces/interfaces.h"
 #include "Drawings/drawings.h"
 
