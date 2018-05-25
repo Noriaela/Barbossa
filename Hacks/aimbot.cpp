@@ -9,11 +9,10 @@ int Hitscan(C_BaseEntity* entity) {
     vector<int> hitboxes;
     hitboxes.push_back(HITBOX_HEAD);
     hitboxes.push_back(HITBOX_NECK);
-    hitboxes.push_back(HITBOX_LOWER_NECK);
     hitboxes.push_back(HITBOX_PELVIS);
-    hitboxes.push_back(HITBOX_BODY);
+    hitboxes.push_back(HITBOX_BELLY);
     hitboxes.push_back(HITBOX_THORAX);
-    hitboxes.push_back(HITBOX_CHEST);
+    hitboxes.push_back(HITBOX_LOWER_CHEST);
     hitboxes.push_back(HITBOX_UPPER_CHEST);
     hitboxes.push_back(HITBOX_RIGHT_THIGH);
     hitboxes.push_back(HITBOX_LEFT_THIGH);
