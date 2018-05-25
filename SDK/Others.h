@@ -425,15 +425,13 @@ enum Bone: int
     BONE_HEAD,
 };
 
-enum Hitbox: int
-{
+enum Hitbox: int {
     HITBOX_HEAD,
     HITBOX_NECK,
-    HITBOX_LOWER_NECK,
     HITBOX_PELVIS,
-    HITBOX_BODY,
+    HITBOX_BELLY,
     HITBOX_THORAX,
-    HITBOX_CHEST,
+    HITBOX_LOWER_CHEST,
     HITBOX_UPPER_CHEST,
     HITBOX_RIGHT_THIGH,
     HITBOX_LEFT_THIGH,
@@ -448,12 +446,6 @@ enum Hitbox: int
     HITBOX_LEFT_UPPER_ARM,
     HITBOX_LEFT_FOREARM,
     HITBOX_MAX
-    //        HITBOX_HEAD = 0,
-    //        HITBOX_NECK,
-    //        HITBOX_PELVIS,
-    //        HITBOX_SPINE,
-    //        HITBOX_LEGS,
-    //        HITBOX_ARMS
 };
 
 enum HitGroups: int
