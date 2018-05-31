@@ -455,8 +455,9 @@ void cMenu::renderMisc(int x, int y) {
     this->renderCheckbox(x, y + 20, "Auto strafe", &vars.misc.autostrafe);
     this->renderCheckbox(x, y + 60, "FOV", &vars.misc.fovt);
     this->renderSlider(x, y + 70, 180, "", vars.misc.fov, 70, 0);
-    this->renderCheckbox(x, y + 90, "No recoil", &vars.misc.norecoil);
-    this->renderCheckbox(x, y + 110, "No visual recoil", &vars.misc.novisual);
+    this->renderCheckbox(x, y + 90, "No Scope", &vars.misc.noscope);
+    this->renderCheckbox(x, y + 110, "No recoil", &vars.misc.norecoil);
+    this->renderCheckbox(x, y + 130, "No visual recoil", &vars.misc.novisual);
     // Right Side
     this->renderCheckbox(x + 300, y, "Clantag", &vars.misc.clantag);
     this->renderCheckbox(x + 300, y + 20, "Spammer", &vars.misc.spammer);
