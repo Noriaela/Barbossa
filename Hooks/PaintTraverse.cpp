@@ -4,9 +4,13 @@
 #include "../Hacks/spectators.h"
 
 void hkPaintTraverse(void* thisptr, VPANEL panel, bool forceRepaint, bool allowForce) {
+    if (vars.misc.noscope && !strcmp("HudZoom", pPanel->GetName(panel)))
+        return;
+    
     paintVMT->GetOriginalMethod<tPaintTraverse>(42)(thisptr, panel, forceRepaint, allowForce);
     C_BaseEntity* local = (C_BaseEntity*)pEntList->GetClientEntity(pEngine->GetLocalPlayer());
-    static VPANEL last = 0;    
+    static VPANEL last = 0;
+
     if(!last) {
         if(strstr(pPanel->GetName(panel), "FocusOverlayPanel")) {
             specfont    = draw->createfont(specfont, "Tahoma", 12, FONTFLAG_OUTLINE);   // Used for spectatorwindow

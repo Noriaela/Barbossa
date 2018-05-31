@@ -83,6 +83,7 @@ public:
         int flashalpha      = 0.f;      // How "flashed" you are
         bool antiscreenshot = false;    // Anti screenshot
         bool showspectators = false;    // Spectator List
+        bool noscope        = false;    // Removes black outline when scoped in
         // AntiAim
         bool antiaim        = false;    // Anti aims / "spinbot"
         bool thirdpersonmode= false;    // Thirdperson
