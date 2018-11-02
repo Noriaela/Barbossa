@@ -1,7 +1,7 @@
 #include "menu.h"
 
-cMenu* menu = new cMenu();
-Color Red             = Color(255, 0, 57, 255);
+cMenu* menu = new cMenu(); // Sort this shit yourself if you want it sorted
+Color Red               = Color(255, 0, 57, 255);
 Color inactive          = Color(82, 82, 82, 255);
 Color MainColor         = Red;
 Color FontColor         = Color(250, 250, 250, 250);
@@ -451,6 +451,11 @@ void cMenu::renderVis(int x, int y) {
 }
 
 void cMenu::renderMisc(int x, int y) {
+    vector<string> Clantags;
+    Clantags.push_back("Off");
+    Clantags.push_back("Hide");
+    Clantags.push_back("Adderall");
+    Clantags.push_back("Valve");
     this->renderCheckbox(x, y, "Bhop", &vars.misc.bhop);
     this->renderCheckbox(x, y + 20, "Auto strafe", &vars.misc.autostrafe);
     this->renderCheckbox(x, y + 60, "FOV", &vars.misc.fovt);
@@ -458,12 +463,13 @@ void cMenu::renderMisc(int x, int y) {
     this->renderCheckbox(x, y + 90, "No Scope", &vars.misc.noscope);
     this->renderCheckbox(x, y + 110, "No recoil", &vars.misc.norecoil);
     this->renderCheckbox(x, y + 130, "No visual recoil", &vars.misc.novisual);
+    this->renderCheckbox(x, y + 250, "Anti untrust", &vars.misc.antiuntrust);
     // Right Side
-    this->renderCheckbox(x + 300, y, "Clantag", &vars.misc.clantag);
-    this->renderCheckbox(x + 300, y + 20, "Spammer", &vars.misc.spammer);
-    this->renderCheckbox(x + 300, y + 40, "Spec List", &vars.misc.showspectators);
-    this->renderCheckbox(x + 300, y + 60, "Antiscreenshot", &vars.misc.antiscreenshot);
-    this->renderCheckbox(x + 300, y + 80, "Anti untrust", &vars.misc.antiuntrust);    
+    this->renderCheckbox(x + 300, y, "Spammer", &vars.misc.spammer);
+    this->renderCheckbox(x + 300, y + 20, "Spec List", &vars.misc.showspectators);
+    this->renderCheckbox(x + 300, y + 40, "Antiscreenshot", &vars.misc.antiscreenshot);
+    this->renderCheckbox(x + 300, y + 80, "Clantag", &vars.misc.clantag);
+    this->renderCombo(x + 300, y + 100, 125, 20, "Off", Clantags, vars.misc.tag, &vars.clantag_opend);
 }
 
 void cMenu::renderColors(int x, int y) {
@@ -491,15 +497,6 @@ void cMenu::renderColors(int x, int y) {
         this->drawcolorpicker(x + 350, y + 20, "Weapon", vars.colors.weapon);
     } 
 }
-// Menu tabs
-enum mTab {
-    Main        = 0,
-    AimTab      = 1,
-    PlayerTab   = 2,
-    VisTab      = 3,
-    MiscTab     = 4,
-    ColorsTab   = 5,
-};
 static int curTab = mTab::AimTab;
 // This is where the menu is "put together"
 void cMenu::renderMenu() {

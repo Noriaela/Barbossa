@@ -2,8 +2,17 @@
 //  menu.hpp
 //  macOS base
 //
-
 #pragma once
+
+// Menu tabs
+enum mTab {
+    Main        = 0,
+    AimTab      = 1,
+    PlayerTab   = 2,
+    VisTab      = 3,
+    MiscTab     = 4,
+    ColorsTab   = 5,
+};
 
 #include "../main.h"
 
