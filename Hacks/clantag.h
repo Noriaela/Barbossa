@@ -1,5 +1,13 @@
+#pragma once
+
 #include "../main.h"
 
-void clantag();
-void SetScrollClanTag(string Tag);
-    
+enum ClantagType {
+	Default	= 0,
+	Hide	= 1,
+	Adderall= 2,
+	Valve	= 3,
+};
+
+void ChangeName(const char* szName);
+void Clantag();
