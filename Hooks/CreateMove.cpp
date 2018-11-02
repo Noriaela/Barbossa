@@ -41,29 +41,12 @@ string GetLocalName() {
     return localInfo.name;
 }
 
-void ChangeName(const char* szName) {
-    ConVar* cvar_name = pCvar->FindVar("name");
-    *(int*)((uintptr_t)&cvar_name->fnChangeCallback + 0x15) = 0;
-    cvar_name->SetValue(szName);
-}
-
-void showranks(CUserCmd* cmd) {
-    if(!vars.misc.showrank)
-        return;
-    if(!(cmd->buttons & IN_SCORE))
-        return;
-    
-    float input[3] = { 0.f };
-    MsgFunc_ServerRankRevealAll(input);
-}
-
 void hacks(CUserCmd* cmd, C_BaseEntity* local, C_BaseCombatWeapon* weapon, Vector& vOldAngles, bool& sendpacket) {
     DoAutoStrafe(cmd, local);
     DoBhop(cmd, local);
     DoAim(cmd, local, weapon, sendpacket);
     DoAntiaim(cmd, local, weapon, sendpacket);
     ContinuousPistols(cmd, weapon); // will continously fire pistol when trigger is  held
-    showranks(cmd);                 // Show all ranks
     DoTrigger(cmd);                 // Add triggerbot
     clantag();                      // Clantag
     DoSpammer();                    // Spammer
