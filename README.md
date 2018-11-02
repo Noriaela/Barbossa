@@ -1,5 +1,4 @@
 # Counter Strike Global Offensive Open Source Multihack
-#### Not going to be updating this anymore.
 
 ### Setup
 

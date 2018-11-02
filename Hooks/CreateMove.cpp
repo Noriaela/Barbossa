@@ -49,7 +49,7 @@ void hacks(CUserCmd* cmd, C_BaseEntity* local, C_BaseCombatWeapon* weapon, Vecto
     DoAntiaim(cmd, local, weapon, sendpacket);
     ContinuousPistols(cmd, weapon); // will continously fire pistol when trigger is  held
     DoTrigger(cmd);                 // Add triggerbot
-    clantag();                      // Clantag
+    Clantag();                      // Clantag
     DoSpammer();                    // Spammer
     RecoilControl(local, cmd);
     if(draw->m_szChangedValue[2].length() > 0)                      // Name Changer

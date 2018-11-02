@@ -45,6 +45,7 @@ void hkPaintTraverse(void* thisptr, VPANEL panel, bool forceRepaint, bool allowF
         pwnmymenu(); {
             DrawPlayerESP();    // Player esp            
             Spectatorlist();    // Draws speclist
+            DrawScope(local);
         }
         if(vars.menu) { // Draw menu items
             menu->renderMenu();

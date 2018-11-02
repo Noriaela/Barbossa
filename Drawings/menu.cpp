@@ -305,7 +305,7 @@ void cMenu::renderAim(int x, int y) {
     draw->drawstring(x + 200, y + 90, FontColor, mFont, "Autowall MinDamage");
     this->renderSlider(x + 200, y + 100, 90, "", vars.aimbot.mindmg, 100, 0);
     draw->drawstring(x + 200, y + 110, FontColor, mFont, "Pointscale");
-    this->renderSlider(x + 200, 120, 90, "", vars.aimbot.pointscale, 100, 0);
+    this->renderSlider(x + 200, y + 120, 90, "", vars.aimbot.pointscale, 100, 0);
     // Combo Vecotrs
     vector<string> Pitch;
     vector<string> Yaw;
@@ -343,12 +343,12 @@ void cMenu::renderAim(int x, int y) {
     this->renderCheckbox(x + 300, y + 20, "Show Real Angles", &vars.misc.thirdpersonmode);
     this->renderCheckbox(x + 300, y + 40, "Fake", &vars.misc.fakeaa);
     this->renderCheckbox(x + 300, y + 60, "At Targets", &vars.misc.attargets);
-    this->renderCombo(x + 300, y + 80, 125, 20, "Pitch", Pitch, vars.misc.aaX, &vars.aaX_opend); 
-    if(vars.aaX_opend) {
-    this->renderCombo(x + 300, y + 100, 125, 20, "Yaw", Yaw, vars.misc.aaY, &vars.aaY_opend);
+    this->renderCombo(x + 300, y + 80, 90, 20, "Pitch", Pitch, vars.misc.aaX, &vars.aaX_opend);
+    if(!vars.aaX_opend){
+    this->renderCombo(x + 300, y + 100, 90, 20, "Yaw", Yaw, vars.misc.aaY, &vars.aaY_opend);
     }
-    if(vars.aaY_opend) {
-    this->renderCombo(x + 300, y + 120, 125, 20, "FakeYaw", FakeYaw, vars.misc.FaaY, &vars.FaaY_opend);
+    if((!vars.aaX_opend) && !vars.aaY_opend) {
+    this->renderCombo(x + 300, y + 120, 90, 20, "fYaw", FakeYaw, vars.misc.FaaY, &vars.FaaY_opend);
     }
 }
 void cMenu::renderPlayer(int x, int y) {
@@ -458,18 +458,18 @@ void cMenu::renderMisc(int x, int y) {
     Clantags.push_back("Valve");
     this->renderCheckbox(x, y, "Bhop", &vars.misc.bhop);
     this->renderCheckbox(x, y + 20, "Auto strafe", &vars.misc.autostrafe);
-    this->renderCheckbox(x, y + 60, "FOV", &vars.misc.fovt);
-    this->renderSlider(x, y + 70, 180, "", vars.misc.fov, 70, 0);
-    this->renderCheckbox(x, y + 90, "No Scope", &vars.misc.noscope);
-    this->renderCheckbox(x, y + 110, "No recoil", &vars.misc.norecoil);
-    this->renderCheckbox(x, y + 130, "No visual recoil", &vars.misc.novisual);
-    this->renderCheckbox(x, y + 250, "Anti untrust", &vars.misc.antiuntrust);
+    this->renderCheckbox(x, y + 40, "FOV", &vars.misc.fovt);
+    this->renderSlider(x, y + 50, 180, "", vars.misc.fov, 70, 0);
+    this->renderCheckbox(x, y + 70, "No Scope", &vars.misc.noscope);
+    this->renderCheckbox(x, y + 90, "No recoil", &vars.misc.norecoil);
+    this->renderCheckbox(x, y + 110, "No visual recoil", &vars.misc.novisual);
+    this->renderCheckbox(x, y + 230, "Anti untrust", &vars.misc.antiuntrust);
     // Right Side
     this->renderCheckbox(x + 300, y, "Spammer", &vars.misc.spammer);
     this->renderCheckbox(x + 300, y + 20, "Spec List", &vars.misc.showspectators);
     this->renderCheckbox(x + 300, y + 40, "Antiscreenshot", &vars.misc.antiscreenshot);
-    this->renderCheckbox(x + 300, y + 80, "Clantag", &vars.misc.clantag);
-    this->renderCombo(x + 300, y + 100, 125, 20, "Off", Clantags, vars.misc.tag, &vars.clantag_opend);
+    this->renderCheckbox(x + 300, y + 60, "Clantag", &vars.misc.clantag);
+    this->renderCombo(x + 300, y + 80, 125, 20, "Off", Clantags, vars.misc.tag, &vars.clantag_opend);
 }
 
 void cMenu::renderColors(int x, int y) {

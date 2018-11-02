@@ -371,6 +371,10 @@ public:
     {
         return *(bool*)((uintptr_t)this + offsets.DT_CSPlayer.m_bGunGameImmunity);
     }
+
+    bool GetGhost() {
+        return *(bool*)((uintptr_t)this + offsets.DT_CSPlayer.m_bIsPlayerGhost);
+    }
     
     Vector GetBonePosition(int boneIndex)
     {
@@ -705,28 +709,24 @@ public:
         return *(float*)((uintptr_t)this + offsets.DT_WeaponCSBase.m_fAccuracyPenalty);
     }
     
-    CCSWeaponInfo* GetCSWpnData()
-    {
-        typedef CCSWeaponInfo* (* oGetCSWpnData)(void*);
-        return getvfunc<oGetCSWpnData>(this, 513)(this);
+    CCSWeaponInfo* GetCSWpnData() {
+        typedef CCSWeaponInfo*(*oGetCSWpnData)(void*);
+        return getvfunc<oGetCSWpnData>(this, 512)(this);
     }
-    
-    float GetInaccuracy()
-    {
-        typedef float (* oGetInaccuracy)(void*);
-        return getvfunc<oGetInaccuracy>(this, 536)(this);
+
+    float GetSpread() {
+        typedef float(*oGetSpread)(void*);
+        return getvfunc<oGetSpread>(this, 504)(this);
     }
-    
-    float GetSpread()
-    {
-        typedef float (* oGetSpread)(void*);
-        return getvfunc<oGetSpread>(this, 505)(this);
+
+    float GetInaccuracy() {
+        typedef float(*oGetInaccuracy)(void*);
+        return getvfunc<oGetInaccuracy>(this, 535)(this);
     }
-    
-    void UpdateAccuracyPenalty()
-    {
-        typedef void (* oUpdateAccuracyPenalty)(void*);
-        return getvfunc<oUpdateAccuracyPenalty>(this, 537)(this);
+
+    void UpdateAccuracyPenalty() {
+        typedef void (*oUpdateAccuracyPenalty)(void*);
+        return getvfunc<oUpdateAccuracyPenalty>(this, 536)(this);
     }
     
     

@@ -72,6 +72,8 @@ void hkFrameStage(void* thisptr, ClientFrameStage_t curStage) {
                 continue;
             if(entity->GetDormant())
                 continue;
+            if(entity->GetGhost())
+                continue;
             if(entity == local)
                 continue;
             if(!gCorrections[entity->GetIndex()].resolved)

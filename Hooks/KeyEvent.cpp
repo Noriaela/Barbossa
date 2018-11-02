@@ -13,16 +13,6 @@ int hkKeyEvent(void* thisptr, int eventcode, int keynum, const char* currentbind
         
     }
     
-    if(eventcode == 1)  // Key released
-    {
-        if(vars.menu && (vars.misc_clantag || vars.misc_name || vars.misc_changename))
-        {
-            draw->handleinput(keynum, draw->m_szCurrentString);
-            return 0;
-        }
-        
-    }
-    
     return clientVMT->GetOriginalMethod<tKeyEvent>(KeyEventIndex)(thisptr, eventcode, keynum, currentbinding);
 }
 

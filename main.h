@@ -32,6 +32,7 @@
 using namespace std;
 
 #include "SDK/offsets.h"    // OFFSET 
+#include "Hooks/index.h"
 
 #include "SDK/CEffects.h" 
 #include "SDK/Vector.h"
