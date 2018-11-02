@@ -1,4 +1,7 @@
 #include "../main.h"
+// Index IDs
+#include "index.h"
+
 #include "../Hacks/aimbot.h"
 #include "../Hacks/antiaim.h"
 #include "../Hacks/autoshoot.h"
@@ -6,8 +9,6 @@
 #include "../Hacks/clantag.h"
 #include "../Hacks/spammer.h"
 #include "../Hacks/triggerbot.h"
-// Index IDs
-#include "index.h"
 
 Vector tpangles;
 bool* bSendPacket = nullptr;
@@ -55,7 +56,6 @@ void hacks(CUserCmd* cmd, C_BaseEntity* local, C_BaseCombatWeapon* weapon, Vecto
         ChangeName(draw->m_szChangedValue[2].c_str());    
     if(draw->m_szChangedValue[3].length() > 0 && vars.misc.clantag) // Clantag Changer
         SetClanTag(draw->m_szChangedValue[3].c_str(), "Barbossa");
-    
 }
 
 bool bOnce = false;
