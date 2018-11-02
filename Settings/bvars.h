@@ -10,13 +10,13 @@ public:
     bool hands_opend;
     bool weapons_opend;
     bool players_opend;
+    // Clantag
+    bool clantag_opend;
     // Menu
     bool colors_opend;
     // For aa corrections
     bool playerlist_opend_x[64];
     bool playerlist_opend_y[64];
-    // For text input
-    bool misc_clantag, misc_name, misc_changename;
 };
 
 class cVariables : public ccombobox {
@@ -61,8 +61,8 @@ public:
         bool chams      = false;        // Player Chams
         bool handchams  = false;         // Handchams obv
         bool weaponchams= false;         // Weapon chams obv
-        int weaponType  = 1;            // Weapon Type 0 - Lit 1 - Texture 2 - Wireframe
-        int handsType   = 1;            // Hand   Type 0 - Lit 1 - Texture 2 - Wireframe
+        int weaponType  = 0;            // Weapon Type 0 - Lit 1 - Texture 2 - Wireframe
+        int handsType   = 0;            // Hand   Type 0 - Lit 1 - Texture 2 - Wireframe
         int playersType = 0;            // Player Type 0 - Lit 1 - Texture
     }visuals;
     
@@ -75,9 +75,9 @@ public:
         bool autostrafe     = false;    // Strafes for you ofc
         bool airstuck       = false;    // Airstuck
         bool fovt           = false;    // Fov Changer Enabled
-        int fov             = 10;       // FOV changer
+        int fov             = 0;       // FOV changer
         bool clantag        = false;    // Clantag changer
-        bool showrank       = false;     // Show everyboys rank in MM
+        int tag             = 0;        // Tags | See clantag.h for more info
         bool spammer        = false;    // Chat spammer
         bool noflash        = false;     // Disabled flashbangs
         int flashalpha      = 0.f;      // How "flashed" you are
