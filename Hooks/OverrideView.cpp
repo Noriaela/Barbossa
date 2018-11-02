@@ -1,7 +1,9 @@
 #include "../main.h"
+// Index IDs
+#include "index.h"
 
-void hkOverrideView(void* thisptr, CViewSetup& setup) 
-{
+
+void hkOverrideView(void* thisptr, CViewSetup& setup)  {
     auto* local = pEntList->GetClientEntity(pEngine->GetLocalPlayer());
     
     if(vars.misc.fovt && vars.misc.fov > 0) {
@@ -10,5 +12,5 @@ void hkOverrideView(void* thisptr, CViewSetup& setup)
         }
     }
     
-    createmoveVMT->GetOriginalMethod<tOverrideView>(19)(thisptr, setup);
+    createmoveVMT->GetOriginalMethod<tOverrideView>(OverrideViewIndex)(thisptr, setup);
 }

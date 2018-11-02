@@ -1,4 +1,6 @@
 #include "../main.h"
+// Index IDs
+#include "index.h"
 
 void RemoveFlash(ClientFrameStage_t stage) {
     if (!pEngine->IsInGame())
@@ -57,7 +59,7 @@ void hkFrameStage(void* thisptr, ClientFrameStage_t curStage) {
         RemoveFlash(curStage);     
     }
     
-    clientVMT->GetOriginalMethod<tFrameStage>(36)(thisptr, curStage);
+    clientVMT->GetOriginalMethod<tFrameStage>(FrameStageIndex)(thisptr, curStage);
     
     if(curStage == ClientFrameStage_t::FRAME_NET_UPDATE_POSTDATAUPDATE_START) {
         for(int i = 1; i < 64; i++) {

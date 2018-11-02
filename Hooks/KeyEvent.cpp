@@ -1,4 +1,6 @@
 #include "../main.h"
+// Index IDs
+#include "index.h"
 
 int hkKeyEvent(void* thisptr, int eventcode, int keynum, const char* currentbinding)
 {
@@ -6,13 +8,7 @@ int hkKeyEvent(void* thisptr, int eventcode, int keynum, const char* currentbind
     {
         if(keynum == KEY_INSERT || keynum == KEY_LALT)
         {
-            vars.menu = !vars.menu;
-            
-            if(vars.menu)
-                pEngine->ExecuteClientCmd("cl_mouseenable 0");
-            else
-                pEngine->ExecuteClientCmd("cl_mouseenable 1");
-
+            vars.menu = !vars.menu; // Fix the cursour issue yourselves its not hard
         }
         
     }
@@ -27,7 +23,7 @@ int hkKeyEvent(void* thisptr, int eventcode, int keynum, const char* currentbind
         
     }
     
-    return clientVMT->GetOriginalMethod<tKeyEvent>(20)(thisptr, eventcode, keynum, currentbinding);
+    return clientVMT->GetOriginalMethod<tKeyEvent>(KeyEventIndex)(thisptr, eventcode, keynum, currentbinding);
 }
 
 

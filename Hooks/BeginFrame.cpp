@@ -1,7 +1,6 @@
 #include "../main.h"
 
-void hkBeginFrame(void* thisptr, float frameTime)
-{
+void hkBeginFrame(void* thisptr, float frameTime) {
     
     
 }

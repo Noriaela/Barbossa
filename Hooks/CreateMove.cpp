@@ -6,6 +6,8 @@
 #include "../Hacks/clantag.h"
 #include "../Hacks/spammer.h"
 #include "../Hacks/triggerbot.h"
+// Index IDs
+#include "index.h"
 
 Vector tpangles;
 bool* bSendPacket = nullptr;
@@ -76,7 +78,7 @@ void hacks(CUserCmd* cmd, C_BaseEntity* local, C_BaseCombatWeapon* weapon, Vecto
 bool bOnce = false;
 bool SendPacket = true;
 bool hkCreateMove(void* thisptr, float flSampleInput, CUserCmd* cmd) {
-    createmoveVMT->GetOriginalMethod<tCreateMove>(25)(thisptr, flSampleInput, cmd);
+    createmoveVMT->GetOriginalMethod<tCreateMove>(CreatmoveIndex)(thisptr, flSampleInput, cmd);
     if(!cmd->command_number)
         return true;
     auto* local = pEntList->GetClientEntity(pEngine->GetLocalPlayer());

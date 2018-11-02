@@ -1,4 +1,6 @@
 #include "../main.h"
+// Index IDs
+#include "index.h"
 
 string DirName(string source) {
     source.erase(find(source.rbegin(), source.rend(), '/').base(), source.end());
@@ -90,7 +92,7 @@ IMaterial* CreateMaterial(bool ignorez, bool wireframe, string szType) {
 }
 
 void CallOriginalModel(void* thisptr, void* context, void *state, const ModelRenderInfo_t &pInfo, matrix3x4_t* pCustomBoneToWorld) {
-    modelVMT->GetOriginalMethod<tDrawModelExecute>(21)(thisptr, context, state, pInfo, pCustomBoneToWorld);
+    modelVMT->GetOriginalMethod<tDrawModelExecute>(DrawModelExecuteIndex)(thisptr, context, state, pInfo, pCustomBoneToWorld);
 }
 
 void hkDrawModelExecute(void* thisptr, void* context, void *state, const ModelRenderInfo_t &pInfo, matrix3x4_t* pCustomBoneToWorld) {

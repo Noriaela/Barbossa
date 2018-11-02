@@ -2,12 +2,15 @@
 #include "../Drawings/menu.h"
 #include "../Hacks/esp.h"
 #include "../Hacks/spectators.h"
+// Index IDs
+#include "index.h"
+
 
 void hkPaintTraverse(void* thisptr, VPANEL panel, bool forceRepaint, bool allowForce) {
     if (vars.misc.noscope && !strcmp("HudZoom", pPanel->GetName(panel)))
         return;
     
-    paintVMT->GetOriginalMethod<tPaintTraverse>(42)(thisptr, panel, forceRepaint, allowForce);
+    paintVMT->GetOriginalMethod<tPaintTraverse>(PaintTraverseIndex)(thisptr, panel, forceRepaint, allowForce);
     C_BaseEntity* local = (C_BaseEntity*)pEntList->GetClientEntity(pEngine->GetLocalPlayer());
     static VPANEL last = 0;
 
