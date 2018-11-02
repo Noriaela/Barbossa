@@ -99,6 +99,9 @@ void DrawPlayerESP()
         
         if(entity->GetTeam() != 2 && entity->GetTeam() != 3)
             continue;
+
+        if(entity->GetGhost())
+            continue;
         
         if(vars.visuals.enemyonly && entity->GetTeam() == local->GetTeam())
             continue;

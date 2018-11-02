@@ -67,6 +67,8 @@ void DoAim(CUserCmd* pCmd, C_BaseEntity* local, C_BaseCombatWeapon* weapon, bool
             continue;
         if(entity->GetImmune())
             continue;
+        if(entity->GetGhost())
+            continue;
         if(weapon->GetAmmo() < 1)
             continue;
         if(weapon->IsKnife() || weapon->IsBomb())
