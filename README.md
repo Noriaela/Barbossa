@@ -18,6 +18,9 @@ To build:
 
 Injection can be done by injecting it with your favorite shared library injector.
 
+### Future Updates
+I'll post plans for future [here](https://github.com/sonicrules11/Barbossa/issues/28)
+
 ### Credit
 
 * ViKiNG (Making Barbossa)
