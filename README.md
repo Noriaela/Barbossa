@@ -1,5 +1,10 @@
 # Counter Strike Global Offensive Open Source Multihack
 
+
+# NOTE:
+
+I'm done with this as I have zero incentive to work on it anymore. It has so many issues and I cbf to fix them.
+
 ### Setup
 
 Requirements:
