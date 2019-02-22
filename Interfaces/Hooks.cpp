@@ -44,6 +44,7 @@ void InitializeVMTs() {
     SetClanTag  = reinterpret_cast<SendClanTagFn>(findClanTag);
     pClientMode = reinterpret_cast<IClientMode*>(findClientMode);
     pGlobals    = *reinterpret_cast<CGlobalVarsBase**>(findGlobalVars);
+    pInput = *reinterpret_cast<CInput**>(GetAbsoluteAddress(getvfunc<uintptr_t>(pClient, 16) + 4, 3, 7));
 
     paintVMT        = new VMT(pPanel);
     createmoveVMT   = new VMT(pClientMode);
