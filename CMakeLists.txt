@@ -1,8 +1,16 @@
 cmake_minimum_required(VERSION 3.12)
-project(Barbossa)
+project(barbossa)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ./bin)
+find_package(SDL2 REQUIRED)
+include_directories(${SDL2_INCLUDE_DIR})
 
-set(SOURCE_FILES main.cpp main.h Drawings/drawings.cpp Drawings/drawings.h Drawings/menu.cpp Drawings/menu.h Hacks/aimbot.cpp Hacks/aimbot.h Hacks/antiaim.cpp Hacks/antiaim.h Hacks/autoshoot.cpp Hacks/autoshoot.h Hacks/autowall.cpp Hacks/autowall.h Hacks/bhop.cpp Hacks/bhop.h Hacks/clantag.cpp Hacks/clantag.h Hacks/esp.cpp Hacks/esp.h Hacks/hacks.h Hacks/prediction.h Hacks/prediction.h Hacks/resolver.cpp Hacks/spammer.cpp Hacks/spammer.h Hacks/spectators.cpp Hacks/spectators.h Hacks/triggerbot.cpp Hacks/triggerbot.h Hooks/BeginFrame.cpp Hooks/CreateMove.cpp Hooks/DrawModelExecute.cpp Hooks/FrameStage.cpp Hooks/KeyEvent.cpp Hooks/OverrideView.cpp Hooks/PaintTraverse.cpp Hooks/RunCommand.cpp Interfaces/Hooks.cpp Interfaces/Hooks.h Interfaces/interfaces.cpp Interfaces/interfaces.h Utils/netvarmanager.cpp Utils/netvarmanager.h Utils/patternscan.cpp Utils/patternscan.h Utils/utils.cpp Utils/utils.h Settings/bvars.cpp Settings/bvars.h SDK/C_BaseEntity.h SDK/CEffects.h SDK/CGlobalVarsBase.h SDK/CInput.h SDK/Color.h SDK/common.h SDK/CPlayerResource.h SDK/CUserCmd.h SDK/CViewSetup.h SDK/IBaseCLientDLL.h SDK/IClientEntityList.h SDK/ICvar.h SDK/IEngineClient.h SDK/IEngineTrace.h SDK/IGameMovement.h SDK/IInputSystem.h SDK/IMaterial.h SDK/IMaterialSystem.h SDK/IPanel.h SDK/IPhysicsSurfaceProps.h SDK/IPrediction.h SDK/ISurface.h SDK/IVDebugOverlay.h SDK/IVModelInfo.h SDK/IVModelRender.h SDK/offsets.cpp SDK/offsets.h SDK/Others.h SDK/Vector.h SDK/VMT.h)
-add_library(Barbossa SHARED ${SOURCE_FILES})
+file(GLOB_RECURSE SRC ${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp ${CMAKE_CURRENT_SOURCE_DIR}/src/*.h)
+
+# And in the linking 
+add_library(barbossa SHARED ${barbossa} ${SRC} ${SDL2_LIBRARY})
+target_link_libraries(barbossa "-framework OpenGL")
+
+set_target_properties(barbossa PROPERTIES PREFIX "")
+
