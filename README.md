@@ -10,7 +10,7 @@ Requirements:
 * cmake
 * Shared library injector 
 * [Homebrew](https://brew.sh)
-* [SDl2](https://www.libsdl.org/download-2.0.php)
+* [SDL2](https://www.libsdl.org/download-2.0.php)
 
 To generate the project files:
 
