@@ -38,8 +38,8 @@ I'll post plans for future [here](https://github.com/sonicrules11/Barbossa/issue
 
 ## Credit
 
-* ViKiNG (Making Barbossa)
+* ViKiNG (Making OG Barbossa)
 * Akalisch (NetVarManager/PatternScanner)
-* Pwned (Menu & Sorting Everything)
-* Bypass (Spec List)
-* Ziwiiz (Fake Angles)
+* Pwned (OpenGL Hook)
+* dwnste (Getting SDL2 to work)
+* Aimtux/Bypass (Spec List)
