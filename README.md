@@ -2,6 +2,8 @@
 
 #### Note: 
 **Currently there is nothing on the menu** 
+#### Note2:
+**I'm afraid I wont be able to do anything else to this as I wont be using a Mac**
 
 ### Setup
 
