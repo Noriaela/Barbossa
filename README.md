@@ -42,5 +42,5 @@ I'll post plans for future [here](https://github.com/sonicrules11/Barbossa/issue
 * ViKiNG (Making OG Barbossa)
 * Akalisch (NetVarManager/PatternScanner)
 * Pwned (OpenGL Hook)
-* dwnste (Getting SDL2 to work)
+* dwnste [(Getting SDL2 to work)](https://github.com/dwnste/imgui_sdl_osx)
 * Aimtux/Bypass (Spec List)
